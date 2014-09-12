@@ -32,6 +32,8 @@ alias bake='bundle exec rake'
 
 # history
 shopt -s histappend
+shopt -s cmdhist
+PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
 # cd
 complete -d cd
