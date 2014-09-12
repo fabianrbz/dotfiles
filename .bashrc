@@ -12,11 +12,12 @@ source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 # colors
-CYAN=$(tput setaf 37)
-GREEN=$(tput setaf 64)
+CYAN='\[\e[36m\]'
+GREEN='\[\e[32m\]'
+RESET='\[\e[0m\]'
 
 # prompt
-export PS1="\u@\h:\e${GREEN}\W\e[m\e${CYAN}\$(__git_ps1)\e[m$ "
+export PS1="\u@\h:${GREEN}\W${CYAN}\$(__git_ps1)${RESET}$ "
 
 # ls color
 alias ls='ls -G'
